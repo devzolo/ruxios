@@ -2,6 +2,10 @@
 
 Ruxios is a lightweight yet powerful HTTP request library for Rust. Inspired by libraries like Axios, Ruxios provides a straightforward but mighty interface for your Rust applications.
 
+<div align="center">
+    <img src="./docs/assets/logo.webp" alt="Ruxios logo" width="300"/>
+</div>
+
 [![Build Status](https://img.shields.io/github/workflow/status/devzolo/ruxios/CI)](https://github.com/devzolo/ruxios/actions)
 [![Crates.io Version](https://img.shields.io/crates/v/ruxios.svg)](https://crates.io/crates/ruxios)
 [![Documentation](https://docs.rs/ruxios/badge.svg)](https://docs.rs/ruxios)
