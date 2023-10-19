@@ -2,6 +2,11 @@
 name = "ruxios"
 version = "0.1.0"
 edition = "2021"
+license = "MIT"
+description = "Ruxios is an HTTP library for Rust, inspired by Axios, with a simple yet robust interface"
+keywords = ["http", "request", "client"]
+repository = "https://github.com/devzolo/ruxios"
+authors = ["devzolo <contact@devzolo.com>"]
 
 [dependencies.tokio]
 features = ["full"]
