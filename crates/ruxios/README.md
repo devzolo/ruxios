@@ -3,7 +3,9 @@
 Ruxios is a lightweight yet powerful HTTP request library for Rust. Inspired by libraries like Axios, Ruxios provides a straightforward but mighty interface for your Rust applications.
 
 <div align="center">
-    <img src="./docs/assets/logo.webp" alt="Ruxios logo" width="300"/>
+    <a href="https://github.com/devzolo/ruxios" rel="nofollow noopener noreferrer">
+        <img src="https://github.com/devzolo/ruxios/raw/HEAD/docs/assets/logo.webp?sanitize=true" alt="Ruxios logo" width="300">
+    </a>
 </div>
 
 [![Build Status](https://img.shields.io/github/workflow/status/devzolo/ruxios/CI)](https://github.com/devzolo/ruxios/actions)
@@ -17,13 +19,16 @@ Add this to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-ruxios = "0.1.0"
+ruxios = { version = "0.1.2" }
+tokio = { version = "1.33.0", features = ["full"] }
+serde = { version = "1.0.189", features = ["derive"] }
+serde_json = "1.0.107"
 ```
 
 ## 🚀 Quick Start
 
 ```rust
-use ruxios::{Ruxios, RuxiosConfig};
+use ruxios::prelude::*;
 
 let api = Ruxios::from(RuxiosConfig {
     base_url: String::from("https://api.mysite.com"),
