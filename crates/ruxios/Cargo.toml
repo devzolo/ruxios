@@ -1,6 +1,6 @@
 [package]
 name = "ruxios"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 license = "MIT"
 description = "Ruxios is an HTTP library for Rust, inspired by Axios, with a simple yet robust interface"
