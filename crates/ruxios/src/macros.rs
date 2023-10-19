@@ -1,21 +1,21 @@
 #[macro_export]
 macro_rules! fetch {
-    // Sem headers e sem método especificado
+    // Case: No headers and no specific method
     ($url:expr) => {
         fetch!($url, { method: "GET" })
     };
 
-    // Com método, mas sem headers especificados
+    // Case: With method, but no specified headers
     ($url:expr, { method: $method:expr }) => {
         fetch!($url, { method: $method, headers: {} })
     };
 
-    // Com método e headers especificados como pares chave-valor
+    // Case: With method and headers specified as key-value pairs
     ($url:expr, { method: $method:expr, headers: { $($header_key:expr => $header_val:expr),* } }) => {
         fetch!($url, { method: $method, headers: { $($header_key => $header_val),* }, body: Value::Null })
     };
 
-    // Com método e headers especificados como pares chave-valor e body
+    // Case: With method, headers specified as key-value pairs, and body
     ($url:expr, { method: $method:expr, headers: { $($header_key:expr => $header_val:expr),* }, body: $body:expr }) => {
         async {
             use std::collections::HashMap;
@@ -46,12 +46,12 @@ macro_rules! fetch {
         }
     };
 
-    // Com método e headers especificados como HashMap
+    // Case: With method and headers specified as a HashMap
     ($url:expr, { method: $method:expr, body: $body:expr }) => {
         fetch!($url, { method: $method, headers: {}, body: $body })
     };
 
-    // Com método e headers especificados como HashMap e body
+    // Case: With method, headers specified as a HashMap, and body
     ($url:expr, { method: $method:expr, headers: $headers_map:expr, body: $body:expr }) => {
         async {
             let api = Ruxios::from(RuxiosConfig {
